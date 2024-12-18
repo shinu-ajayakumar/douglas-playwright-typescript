@@ -1,9 +1,10 @@
-import { Page } from "@playwright/test"
+import { expect, Page } from "@playwright/test"
 
 export class SearchResultsPage {
 
     private readonly page: Page
     private readonly searchResults = "a[data-testid='image-link']"
+    private readonly header = "span[data-testid='product-overview-title']"
 
     constructor(page: Page) {
         this.page = page
@@ -16,4 +17,8 @@ export class SearchResultsPage {
     async selectItemByIndex(index: number) {
         await this.page.locator(this.searchResults).nth(index + 1).click()
     }
+
+    async verifySearchResultsFor(search: string){
+        await expect(this.page.locator(this.header)).toHaveText(search)
+}
 }
