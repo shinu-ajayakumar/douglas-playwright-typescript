@@ -17,16 +17,16 @@ export class LandingPage extends HelperBase {
     }
 
     async acceptCookies() {
-        await this.page.locator(this.acceptCookieButton).click()
+        await this.clickElement(this.acceptCookieButton)
     }
 
     async searchFor(search: string) {
-        await this.page.locator(this.searchInput).fill(search)
+        await this.enterText(this.searchInput, search)
         await this.clickSearch()
     }
 
     async clickSearch() {
-        await this.page.locator(this.searchButton).click()
+        await this.clickElement(this.searchButton)
     }
 
     async verifyCartCount(count: number) {

@@ -11,6 +11,6 @@ export class ProductDetailsPage extends HelperBase {
     }
 
     async clickAddToCart() {
-        await this.page.locator(this.addToCartButton).click()
+        await this.clickElement(this.addToCartButton)
     }
 }

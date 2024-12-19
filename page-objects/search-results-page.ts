@@ -15,7 +15,7 @@ export class SearchResultsPage extends HelperBase{
      * @param index - should be the index of the item you want to click starts with 1
      */
     async selectItemByIndex(index: number) {
-        await this.page.locator(this.searchResults).nth(index + 1).click()
+        await this.clickNthElement(this.searchResults, index)
     }
 
     async verifySearchResultsFor(search: string) {
