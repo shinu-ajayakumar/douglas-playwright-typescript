@@ -3,7 +3,6 @@ import { HelperBase } from "./helper-base"
 
 export class LandingPage extends HelperBase {
 
-    private readonly baseUrl = "https://www.douglas.de/de"
     private readonly acceptCookieButton = "button[data-testid='uc-accept-all-button']"
     private readonly searchInput = "input[data-testid='typeAhead-input']"
     private readonly searchButton = "button[data-testid='typeAhead-search-button']"
@@ -14,7 +13,7 @@ export class LandingPage extends HelperBase {
     }
 
     async goTo() {
-        await this.page.goto(this.baseUrl)
+        await this.page.goto("/")
     }
 
     async acceptCookies() {

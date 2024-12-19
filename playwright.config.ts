@@ -35,8 +35,10 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'qa',
+      use: { ...devices['Desktop Chrome'],
+        baseURL: 'https://www.douglas.de/de'
+       },
     },
 
     {
