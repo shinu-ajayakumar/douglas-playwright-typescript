@@ -1,8 +1,8 @@
 import { expect, Page } from "@playwright/test"
+import { HelperBase } from "./helper-base"
 
-export class LandingPage {
+export class LandingPage extends HelperBase {
 
-    private readonly page: Page
     private readonly baseUrl = "https://www.douglas.de/de"
     private readonly acceptCookieButton = "button[data-testid='uc-accept-all-button']"
     private readonly searchInput = "input[data-testid='typeAhead-input']"
@@ -10,7 +10,7 @@ export class LandingPage {
     private readonly cartCount = "[class='number-badge'] span"
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
     }
 
     async goTo() {

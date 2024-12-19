@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test"
+import { test } from "@playwright/test"
 import { PageManager } from "../page-objects/page-manager";
 
 test("Search by keyword and verify search results", async ({ page }) => {

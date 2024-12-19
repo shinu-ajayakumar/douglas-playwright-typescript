@@ -1,13 +1,13 @@
 import { Page } from "@playwright/test"
+import { HelperBase } from "./helper-base"
 
-export class ProductDetailsPage {
+export class ProductDetailsPage extends HelperBase {
 
-    private readonly page: Page
     private addToCartButton = "button[data-testid='add-to-cart-button']"
     private primaryAddToCartButton = "button.add-cart-modal__button--primary"
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
     }
 
     async clickAddToCart() {
