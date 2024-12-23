@@ -33,5 +33,4 @@ test("Checkout as new user", async ({ page }) => {
     await pm.billing().enterExpiryYear("26")
     await pm.billing().enterSecurityCode("123")
     await pm.billing().makePayment()
-    await pm.onProductDetails().waitForSeconds(20)
 })
