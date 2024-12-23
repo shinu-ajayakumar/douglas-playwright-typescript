@@ -13,4 +13,8 @@ export class ProductDetailsPage extends HelperBase {
     async clickAddToCart() {
         await this.clickElement(this.addToCartButton)
     }
+
+    async proceedToCheckout() {
+        await this.clickElement(this.primaryAddToCartButton)
+    }
 }

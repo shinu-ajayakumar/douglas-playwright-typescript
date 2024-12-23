@@ -14,7 +14,7 @@ export class SearchResultsPage extends HelperBase{
      * This method will click the nth result in the search results
      * @param index - should be the index of the item you want to click starts with 1
      */
-    async selectItemByIndex(index: number) {
+    async selectItemByIndex(index: any) {
         await this.clickNthElement(this.searchResults, index)
     }
 
