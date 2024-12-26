@@ -1,7 +1,7 @@
 import test from "@playwright/test"
 import { PageManager } from "../page-objects/page-manager"
 
-test.only("verify headers", async ({ page }) => {
+test("verify landing page top menu items", async ({ page }) => {
     const searchKeyword = "mobile"
     const pm = new PageManager(page)
 
