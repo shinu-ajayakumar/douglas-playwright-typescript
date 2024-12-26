@@ -20,7 +20,7 @@ test("Search by keyword and verify cart count", async ({ page }) => {
     await pm.onLanding().acceptCookies()
     await pm.onLanding().searchFor(searchKeyword)
 
-    await pm.onSearchResults().selectItemByIndex(getRandomNumber(1,10))
+    await pm.onSearchResults().selectItemByIndex(getRandomNumber(5,10))
     await pm.onProductDetails().clickAddToCart()
     await pm.onLanding().verifyCartCount(1)
 })

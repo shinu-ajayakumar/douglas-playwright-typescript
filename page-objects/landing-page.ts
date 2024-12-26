@@ -1,5 +1,6 @@
 import { expect, Page } from "@playwright/test"
 import { HelperBase } from "./helper-base"
+import { readJsonData } from "../helpers/json-reader";
 
 export class LandingPage extends HelperBase {
 
@@ -9,6 +10,7 @@ export class LandingPage extends HelperBase {
     private readonly cartCount = "[class='number-badge'] span"
     private readonly loggedOutProfileicon = "[data-testid='account-flyout-profile-icon']"
     private readonly loggedInProfileIcon = "[data-testid='account-flyout-logged-in-profile-icon']"
+    private readonly menuItems = "a.navigation-main-entry__link"
 
     constructor(page: Page) {
         super(page)
@@ -42,4 +44,12 @@ export class LandingPage extends HelperBase {
     async verifyLoginSuccess() {
         await this.verifyDisplayed(this.loggedInProfileIcon)
     }
+    
+    async verifyHeaders() {
+        let expectedHeaders = readJsonData('../test-data/header-menu-items.json');
+        const menuHeaders = await this.page.locator(this.menuItems).all();
+
+        await this.verifyElementsText(menuHeaders, expectedHeaders)
+    }
+    
 }
